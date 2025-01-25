@@ -1,6 +1,6 @@
 <x-layout>
     <x-slot:heading>
-        Home page
+        Главная
     </x-slot:heading>
-    <h1>Hello from Home page</h1>
+    <h1>Главная страница</h1>
 </x-layout>

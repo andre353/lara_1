@@ -1,6 +1,6 @@
 <x-layout>
     <x-slot:heading>
-        About page
+        Навыки
     </x-slot:heading>
-    <h1>Hello from About page</h1>
+    <h1>Страница навыков</h1>
 </x-layout>
