@@ -12,10 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('skills', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id')->from(10001);
             $table->string('name');
             $table->string('experience');
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
     }
 

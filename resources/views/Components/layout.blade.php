@@ -20,8 +20,8 @@
                         <div class="hidden md:block">
                             <div class="ml-10 flex items-baseline space-x-4">
                                 <x-nav-link href="/" :active="request()->is('/')">Главная</x-nav-link>
-                                <x-nav-link href="/about" :active="request()->is('about')">Навыки</x-nav-link>
-                                <x-nav-link href="/contact" :active="request()->is('contact')" type="button">Контакты</x-nav-link>
+                                <x-nav-link href="/skills" :active="request()->is('skills')">Навыки</x-nav-link>
+                                <x-nav-link href="/contact" :active="request()->is('contact')">Контакты</x-nav-link>
                             </div>
                         </div>
                     </div>
@@ -53,7 +53,7 @@
                 <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">
                     <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                     <a href="/" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" aria-current="page">Главная</a>
-                    <a href="/about" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Навыки</a>
+                    <a href="/skills" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Навыки</a>
                     <a href="/contact" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Контакты</a>
                 </div>
                 <div class="border-t border-gray-700 pt-4 pb-3">
