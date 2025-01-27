@@ -20,7 +20,7 @@
                         <div class="hidden md:block">
                             <div class="ml-10 flex items-baseline space-x-4">
                                 <x-nav-link href="/" :active="request()->is('/')">Главная</x-nav-link>
-                                <x-nav-link href="/skills" :active="request()->is('skills')">Навыки</x-nav-link>
+                                <x-nav-link href="/jobs" :active="request()->is('jobs')">Вакансии</x-nav-link>
                                 <x-nav-link href="/contact" :active="request()->is('contact')">Контакты</x-nav-link>
                             </div>
                         </div>

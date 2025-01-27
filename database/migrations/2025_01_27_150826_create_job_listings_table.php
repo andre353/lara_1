@@ -11,10 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('skills', function (Blueprint $table) {
+        Schema::create('job_listings', function (Blueprint $table) {
             $table->bigIncrements('id')->from(10001);
-            $table->string('name');
-            $table->string('experience');
+            $table->foreignIdFor(\App\Models\Employer::class);
+            // $table->foreign('employer_id')->references('id')->on('employers');
+            // $table->unsignedBigInteger('employer_id');
+            $table->string('title');
+            $table->string('salary');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
@@ -25,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('skills');
+        Schema::dropIfExists('job_listings');
     }
 };

@@ -1,23 +1,23 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Models\Skill;
+use App\Models\Job;
 
 
 Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/skills/{id}', function ($id) {    
+Route::get('/jobs/{id}', function ($id) {    
 
-    $skill = Skill::find($id);
+    $job = Job::find($id);
 
-    return view('skill', ['skill' => $skill]);    
+    return view('job', ['job' => $job]);    
 });
 
-Route::get('/skills', function () {
-    return view('skills', [
-        'skills' => Skill::all()
+Route::get('/jobs', function () {
+    return view('jobs', [
+        'jobs' => Job::all()
     ]);
 });
 
