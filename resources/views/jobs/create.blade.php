@@ -32,6 +32,14 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                @if($errors->any())
+                    <ul>
+                        @foreach($errors->all() as $error)
+                            <li class="text-red-600 sm:text-sm">{{ $error }}</li>
+                        @endforeach    
+                    </ul>
+                @endif         
             </div>
         </div>
 
