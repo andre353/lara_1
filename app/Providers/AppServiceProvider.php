@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 // use Illuminate\Pagination\Paginator;
+use Illuminate\Database\Eloquent\Model;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -24,5 +25,6 @@ class AppServiceProvider extends ServiceProvider
         // Paginator::defaultView('pagination::default');
         // Paginator::defaultView('pagination::simple-bootstrap-4');
         // Paginator::defaultView('pagination::bootstrap-5');
+        Model::unguard();
     }
 }
