@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Employer;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,9 +14,7 @@ return new class extends Migration
     {
         Schema::create('job_listings', function (Blueprint $table) {
             $table->bigIncrements('id')->from(10001);
-            $table->foreignIdFor(\App\Models\Employer::class);
-            // $table->foreign('employer_id')->references('id')->on('employers');
-            // $table->unsignedBigInteger('employer_id');
+            $table->foreignIdFor(Employer::class);
             $table->string('title');
             $table->string('salary');
             $table->timestamp('created_at')->useCurrent();
