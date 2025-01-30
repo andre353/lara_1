@@ -1,8 +1,12 @@
 <x-layout>
     <x-slot:heading>
-        Вакансии: {{ $job['title'] }}
+        Вакансии: {{ $job->title }}
     </x-slot:heading>
+    <p class="mb-6">
+        Зарплата: {{ $job->salary }}
+    </p>
+
     <p>
-        Зарплата: {{ $job['salary'] }}
+        <x-button href="/jobs/{{ $job->id }}/edit }}">Edit Job</x-button>
     </p>
 </x-layout>
