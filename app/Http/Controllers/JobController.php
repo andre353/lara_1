@@ -42,4 +42,30 @@ class JobController extends Controller
     {
         return view('jobs.edit', ['job' => $job]);
     }
+    
+    public function update(Job $job)
+    {
+        // validate
+        request()->validate([
+            'title' => ['required', 'min:5'],
+            'salary' => ['required', 'min:4'],
+        ]);
+
+        // authorize (On hold...)
+
+        $job = Job::findOrFail($job->id);
+
+        $job->update([
+            'title' => request('title'),
+            'salary' => request('salary')
+        ]);
+        return redirect('/jobs/' . $job->id);
+    }
+    public function destroy(Job $job)
+    {
+        // authorize (On hold...)
+
+        Job::findOrFail($job->id->delete());
+        return redirect('/jobs');
+    }
 }

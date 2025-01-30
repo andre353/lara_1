@@ -2,8 +2,9 @@
     <x-slot:heading>
         Edit Job: {{ $job -> title }}
     </x-slot:heading>
-    <form method="POST" action="/jobs">
+    <form method="POST" action="/jobs/{{ $job->id }}">
         @csrf
+        @method('PATCH')
         <div class="space-y-12">
             <div class="border-b border-gray-900/10 pb-12">
 
@@ -51,9 +52,9 @@
         </div>
 
         <div class="mt-6 flex items-center justify-end gap-x-6">
-            <button type="button" class="text-sm/6 font-semibold text-gray-900">Cancel</button>
+            <a href="/jobs/{{ $job->id }}" class="text-sm/6 font-semibold text-gray-900">Отменить</a>
             <button type="submit"
-                class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save</button>
+                class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Обновить</button>
         </div>
     </form>
 
