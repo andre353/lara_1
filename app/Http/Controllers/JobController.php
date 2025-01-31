@@ -45,13 +45,13 @@ class JobController extends Controller
     
     public function update(Job $job)
     {
+        // authorize (On hold...)
+        
         // validate
         request()->validate([
             'title' => ['required', 'min:5'],
             'salary' => ['required', 'min:4'],
         ]);
-
-        // authorize (On hold...)
 
         $job = Job::findOrFail($job->id);
 
@@ -63,9 +63,7 @@ class JobController extends Controller
     }
     public function destroy(Job $job)
     {
-        // authorize (On hold...)
-
-        Job::findOrFail($job->id->delete());
+        $job->delete();
         return redirect('/jobs');
     }
 }
