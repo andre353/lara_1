@@ -6,6 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Job;
 use App\Models\Tag;
+use App\Models\Employer;
 
 class JobSeeder extends Seeder
 {
@@ -14,13 +15,16 @@ class JobSeeder extends Seeder
      */
     public function run(): void
     {
-        Job::factory(20)->create();
+        Job::factory(10)->create();
+        
+        $jobs = Job::all();
+        $employers = Employer::all();
 
-        foreach (Job::all() as $job) {
-            $job->tags()->attach([
-                rand(1, 5),
-                rand(6, 10),
+        foreach ($jobs as $job) {
+            $job->update([
+                'employer_id' => $employers->random()->id,
             ]);
+            $job->tags()->attach([rand(1, 10)]);        
         }
     }
 }

@@ -6,6 +6,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\Models\Employer;
 
 class User extends Authenticatable
 {
@@ -18,6 +19,7 @@ class User extends Authenticatable
      * @var list<string>
      */
     protected $fillable = [
+        'employer_id',
         'first_name',
         'last_name',
         'email',
@@ -46,4 +48,10 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function employer()
+    {
+        return $this->belongsTo(Employer::class);
+    }
+
 }
